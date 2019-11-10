@@ -1,4 +1,4 @@
-const company = require('./company.js');
+const company = require('./company');
 module.exports = {
     company
 }
