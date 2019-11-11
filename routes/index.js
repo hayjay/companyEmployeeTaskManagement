@@ -4,16 +4,18 @@ module.exports = function(app) {
     let companyLogic = require('../controllers/company');
     
     //company Routes
-    app.route('/api/company')
+    app.route('/api/company/create')
         //reuising the tasks route for get and post http method
         .post(companyLogic.create);  //calling function list_all_tasks in the controller
         // .post(todoList.create_a_task);
 
 
+    app.route('/api/company/fetch')
+        .get(companyLogic.all);
 
-    app.get('/api', (req, res) => res.status(200).send({
-        message : 'Welcome to the Todos API!',
-    }));
+    // app.get('/api', (req, res) => res.status(200).send({
+    //     message : 'Welcome to the Todos API!',
+    // }));
 
     //company create routes for adding new records
     // app.post('/api/company', companyController.create);
